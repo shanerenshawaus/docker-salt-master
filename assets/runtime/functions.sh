@@ -663,7 +663,7 @@ function initialize_datadir()
   log_info "Configuring directories ..."
 
   # This symlink simplifies paths for loading sls files
-  # [[ -d /srv ]] && [[ ! -L /srv ]] && rm -rf /srv
+  [[ -d /srv ]] && [[ ! -L /srv ]] && rm -rf /srv
   ln -sfnv "${SALT_BASE_DIR}" /srv
   if [[ -w "${SALT_BASE_DIR}" ]]; then
     chown -R "${SALT_USER}": "${SALT_BASE_DIR}" || log_error "Unable to change '${SALT_BASE_DIR}' ownership"
@@ -824,7 +824,7 @@ function install_python_additional_packages()
 function initialize_system()
 {
   map_uidgid
-  initialize_datadir
+  # initialize_datadir
   configure_logrotate
   configure_timezone
   configure_salt_master
