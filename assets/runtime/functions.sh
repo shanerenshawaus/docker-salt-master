@@ -824,7 +824,7 @@ function install_python_additional_packages()
 function initialize_system()
 {
   map_uidgid
-  # initialize_datadir
+  initialize_datadir
   configure_logrotate
   configure_timezone
   configure_salt_master
