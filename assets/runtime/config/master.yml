@@ -679,6 +679,7 @@ file_roots:
  base:
  - /data/salt/
  - /data/salt/states
+ - /data/salt/templates
 #  - /data/salt/reactors
 #  - /data/salt/templates
 #  - /data/salt/_modules
